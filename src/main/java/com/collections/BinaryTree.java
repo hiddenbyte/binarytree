@@ -59,7 +59,7 @@ class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * Should create a string with all the items in order, from top to bottom, left to right
+     * Should create a string with all the items in natural order (eg: 1,2,3,4,5,6...)
      *
      * @return string with a space between each element
      */
