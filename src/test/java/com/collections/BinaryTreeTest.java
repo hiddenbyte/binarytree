@@ -28,6 +28,6 @@ class BinaryTreeTest {
 
     @Test
     void testPrintTree() {
-        assertEquals("50 17 72 12 23 54 12 23 54 76 9 14 67", binaryTree.printTree());
+        assertEquals("9 12 14 17 23 50 54 67 72 76", binaryTree.printTree());
     }
 }

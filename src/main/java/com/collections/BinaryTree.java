@@ -5,6 +5,7 @@ import java.util.Objects;
 
 /**
  * Sample implementation of a binary tree
+ *
  * @param <T>
  */
 class BinaryTree<T extends Comparable<T>> {
@@ -18,9 +19,9 @@ class BinaryTree<T extends Comparable<T>> {
     private void add(T value) {
         if (root == null) {
             root = new Node<>(value);
+        } else {
+            add(this.root, value);
         }
-
-        add(this.root, value);
     }
 
     private void add(Node<T> node, T value) {
