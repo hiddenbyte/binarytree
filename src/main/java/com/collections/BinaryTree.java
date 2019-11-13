@@ -3,6 +3,8 @@ package com.collections;
 import java.util.List;
 import java.util.Objects;
 
+import static java.util.Objects.requireNonNull;
+
 /**
  * Sample implementation of a binary tree
  *
@@ -17,6 +19,7 @@ class BinaryTree<T extends Comparable<T>> {
     }
 
     private void add(T value) {
+        requireNonNull(value, "null values not supported");
         if (root == null) {
             root = new Node<>(value);
         } else {
@@ -72,6 +75,21 @@ class BinaryTree<T extends Comparable<T>> {
         return Objects.hash(root);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BinaryTree<?> that = (BinaryTree<?>) o;
+        return Objects.equals(root, that.root);
+    }
+
+    @Override
+    public String toString() {
+        return "BinaryTree{" +
+                "root=" + root +
+                '}';
+    }
+
     private static class Node<T extends Comparable<T>> implements Comparable<T> {
         private T value;
         private Node<T> left;
@@ -108,6 +126,8 @@ class BinaryTree<T extends Comparable<T>> {
         public String toString() {
             return "Node{" +
                     "value=" + value +
+                    ", left=" + left +
+                    ", right=" + right +
                     '}';
         }
     }
