@@ -15,6 +15,7 @@ class BinaryTree<T extends Comparable<T>> {
     private Node<T> root;
 
     BinaryTree(List<T> values) {
+        requireNonNull(values, "null values not supported");
         values.forEach(this::add);
     }
 
