@@ -50,7 +50,15 @@ class BinaryTree<T extends Comparable<T>> {
      * @return smallest value
      */
     T findSmaller() {
-        throw new UnsupportedOperationException("Please implement this method");
+
+        Node<T> smallest = root;
+
+        while (smallest.left != null) {
+            smallest = smallest.left;
+        }
+
+        return smallest.value;
+
     }
 
     /**
@@ -59,7 +67,15 @@ class BinaryTree<T extends Comparable<T>> {
      * @return biggest value
      */
     T findBiggest() {
-        throw new UnsupportedOperationException("Please implement this method");
+
+        Node<T> biggest = root;
+
+        while (biggest.right != null) {
+            biggest = biggest.right;
+        }
+
+        return biggest.value;
+
     }
 
     /**
@@ -68,7 +84,7 @@ class BinaryTree<T extends Comparable<T>> {
      * @return string with a space between each element
      */
     String printTree() {
-        throw new UnsupportedOperationException("Please implement this method");
+        
     }
 
     @Override
